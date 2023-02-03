@@ -19,19 +19,19 @@ def browser(request):
     browser_name = request.config.getoption("browser_name")
     user_language = request.config.getoption("language")
     if browser_name == "chrome":
-        print("\nstart browser Google Chrome for test...")
+        print("\nstart browser Google Chrome for tests...")
         options = webdriver.ChromeOptions()
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         service = ChromeService(ChromeDriverManager().install())
         browser = webdriver.Chrome(service=service, options=options)
     elif browser_name == "firefox":
-        print("\nstart browser Firefox for test...")
+        print("\nstart browser Firefox for tests...")
         options = webdriver.FirefoxOptions()
         options.set_preference("intl.accept_languages", user_language)
         service = FirefoxService(GeckoDriverManager().install())
         browser = webdriver.Firefox(service=service, options=options)
     elif browser_name == "edge":
-        print("\nstart browser Edge for test...")
+        print("\nstart browser Edge for tests...")
         options = webdriver.EdgeOptions()
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         service = EdgeService(EdgeChromiumDriverManager().install())

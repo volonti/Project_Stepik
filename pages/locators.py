@@ -11,3 +11,17 @@ class LoginPageLocators:
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
 
 
+class ProductPageLocators:
+    ADD_BUTTON = (By.CSS_SELECTOR, ".btn-primary.btn-add-to-basket")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.alert-success:nth-child(1)")
+    PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")
+    ADDED_PRODUCT_NAME = (By.CSS_SELECTOR, "#messages strong")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
+    ADDED_PRODUCT_PRICE = (By.CSS_SELECTOR, ".alertinner p strong")
+
+
+
+
+
+
+
