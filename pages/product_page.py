@@ -26,8 +26,8 @@ class ProductPage(BasePage):
         assert self.element_is_visible(self.locators.PRODUCT_PRICE), "Product price is not presented"
 
     def should_be_added_product_price_in_success_message(self):
-        assert self.element_is_visible(self.locators.ADDED_PRODUCT_PRICE), "Added product price is not presented in " \
-                                                                          "success message"
+        assert self.element_is_visible(self.locators.ADDED_PRODUCT_PRICE), \
+            "Added product price is not presented in success message"
 
     def should_be_added_correct_product(self):
         product_name = self.browser.find_element(*self.locators.PRODUCT_NAME).text
@@ -38,3 +38,11 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*self.locators.PRODUCT_PRICE).text
         added_product_price = self.browser.find_element(*self.locators.PRODUCT_PRICE).text
         assert product_price == added_product_price, "Product price are not equal"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(self.locators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_be_disappear_success_message(self):
+        assert self.is_disappeared(self.locators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
